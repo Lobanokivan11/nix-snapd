@@ -53,7 +53,7 @@ in
       sockets.snapd.wantedBy = [ "sockets.target" ];
       services.snapd.wantedBy = [ "multi-user.target" ];
       services.snapd.path = with pkgs; [
-        snapd
+        snap
         util-linux
         kmod
         squashfsTools
