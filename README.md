@@ -37,7 +37,7 @@ Example minimal `/etc/nixos/flake.nix`:
 Add a `nix-snapd` channel with
 
 ``` sh
-sudo nix-channel --add https://github.com/nix-community/nix-snapd/archive/main.tar.gz nix-snapd
+sudo nix-channel --add https://github.com/Lobanokivan11/nix-snapd/archive/main.tar.gz nix-snapd
 sudo nix-channel --update
 ```
 

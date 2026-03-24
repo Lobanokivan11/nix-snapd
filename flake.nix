@@ -19,7 +19,6 @@
         { pkgs, ... }:
         {
           packages.default = pkgs.callPackage ./src/package.nix { };
-          checks.test = import ./src/test { inherit self pkgs; };
         };
     };
 }

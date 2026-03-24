@@ -12,20 +12,20 @@
 }:
 
 let
-  version = "2.67";
+  version = "2.74.1";
 
   src = fetchFromGitHub {
     owner = "canonical";
     repo = "snapd";
     rev = version;
-    hash = "sha256-WiUgLV8/Luxb3T9u1nT/rCk8YduzyyjPaCuiJszuEZU=";
+    hash = "sha256-r0kVD/H3srNrbTMqPaGo+qI2JpxHfJ/p1VkuiY6aJsE=";
   };
 
   goModules =
     (buildGoModule {
       pname = "snap-go-mod";
       inherit version src;
-      vendorHash = "sha256-A/L4Bnx0MIvOUedF8MojXwyE09i0cImrz5fR4zqRWxM=";
+      vendorHash = "sha256-5TzOfVx36TSVPRLSadWwlHX2Qrce8aF8w7j6sP2CYzU=";
     }).goModules;
 
   insecureBubblewrap = bubblewrap.overrideAttrs (o: {
@@ -52,7 +52,7 @@ let
         openssh
         gnutar
         gzip
-        # TODO: xdelta
+        xdelta
 
         # Snap hook calls
         bash
@@ -243,7 +243,7 @@ stdenv.mkDerivation {
             openssh
             gnutar
             gzip
-            # TODO: xdelta
+            xdelta
 
             # Snap hook calls
             bash
