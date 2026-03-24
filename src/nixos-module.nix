@@ -33,7 +33,8 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ snap ];
     services.dbus.packages = [ snap ];
-    security.apparmor.enable = true;    systemd.tmpfiles.rules = [
+    security.apparmor.enable = true;
+    systemd.tmpfiles.rules = [
       "d /var/lib/snapd 0755 root root -"
       "d /var/snap 0755 root root -"
       "L+ /snap - - - - /var/lib/snapd/snap"
