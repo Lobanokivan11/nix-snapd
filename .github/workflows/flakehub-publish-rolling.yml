@@ -13,8 +13,11 @@ jobs:
     steps:
       - uses: "actions/checkout@v3"
       - uses: "DeterminateSystems/nix-installer-action@main"
+        with:
+          flakehub-token: ${{ secrets.FLAKEHUB_TOKEN }}
       - uses: "DeterminateSystems/flakehub-push@main"
         with:
           name: "Lobanokivan11/nix-snapd"
           rolling: true
+          flakehub-token: ${{ secrets.FLAKEHUB_TOKEN }}
           visibility: "public"
