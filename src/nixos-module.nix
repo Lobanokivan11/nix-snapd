@@ -58,7 +58,11 @@ in
         util-linux
         kmod
         squashfsTools
+        coreutils
+        gnutar
+        xz
       ];
+      environment.PATH = lib.makeBinPath [ pkgs.systemd ];
     };
 
     security.wrappers.snap-confine-setuid-wrapper = {
