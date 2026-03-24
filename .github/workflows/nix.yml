@@ -18,13 +18,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: DeterminateSystems/nix-installer-action@main
+        env:
+          FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          flakehub-token: ${{ secrets.FLAKEHUB_TOKEN }}
+          use-flakehub: true
       - uses: DeterminateSystems/magic-nix-cache-action@main
+        env:
+          FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          flakehub-token: ${{ secrets.FLAKEHUB_TOKEN }}
+          use-flakehub: true
       - uses: DeterminateSystems/flake-checker-action@main
+        env:
+          FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          flakehub-token: ${{ secrets.FLAKEHUB_TOKEN }}
+          use-flakehub: true
       - run: nix build --print-build-logs
       - run: nix flake check --print-build-logs
