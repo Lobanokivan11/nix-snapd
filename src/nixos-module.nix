@@ -62,7 +62,7 @@ in
         gnutar
         xz
       ];
-      environment = {
+      globalEnvironment = {
         PATH = lib.makeBinPath [ pkgs.systemd pkgs.coreutils ];
       };
     };
