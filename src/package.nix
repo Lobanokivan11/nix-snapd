@@ -72,11 +72,17 @@ stdenv.mkDerivation {
     makeWrapper
     autoconf
     automake
+    m4
     autoconf-archive
+    pkg-config
+    which
+    gettext
+    go
   ];
 
   buildInputs = with pkgs; [
     go
+    xfsprogs
     glibc
     glibc.static
     pkg-config
