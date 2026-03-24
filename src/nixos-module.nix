@@ -49,7 +49,6 @@ in
     '';
 
     systemd = {
-      generator-packages = [ snap ];
       packages = [ snap ];
       sockets.snapd.wantedBy = [ "sockets.target" ];
       services.snapd.wantedBy = [ "multi-user.target" ];
