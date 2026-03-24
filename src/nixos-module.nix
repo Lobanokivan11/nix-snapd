@@ -62,7 +62,9 @@ in
         gnutar
         xz
       ];
-      environment.PATH = lib.makeBinPath [ pkgs.systemd ];
+      environment = {
+        PATH = lib.makeBinPath [ pkgs.systemd pkgs.coreutils ];
+      };
     };
 
     security.wrappers.snap-confine-setuid-wrapper = {
