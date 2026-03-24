@@ -16,12 +16,12 @@ jobs:
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
       - uses: "DeterminateSystems/flakehub-push@main"
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
           name: "Lobanokivan11/nix-snapd"
           rolling: true
-          use-flakehub: true
+          flakehub: true
           visibility: "public"

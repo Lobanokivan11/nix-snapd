@@ -21,16 +21,16 @@ jobs:
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
       - uses: DeterminateSystems/magic-nix-cache-action@main
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
       - uses: DeterminateSystems/flake-checker-action@main
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
       - run: nix build --print-build-logs
       - run: nix flake check --print-build-logs

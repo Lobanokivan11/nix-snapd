@@ -13,9 +13,9 @@ jobs:
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
       - uses: DeterminateSystems/update-flake-lock@main
         env:
           FLAKEHUB_TOKEN: ${{ secrets.FLAKEHUB_TOKEN }}
         with:
-          use-flakehub: true
+          flakehub: true
